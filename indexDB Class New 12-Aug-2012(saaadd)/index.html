@@ -1,0 +1,38 @@
+<!DOCTYPE HTML
+        >
+<html>
+<head>
+    <title>Address Book</title>
+    <script type="text/javascript" src="indexDB.js"></script>
+    <script>
+            function init(){
+                document.getElementById('save').addEventListener('click',
+                        function(){
+                            var name= document.getElementById('name').value;
+                            var address= document.getElementById('address').value;
+                            var number= document.getElementById('number').value;
+                            setRecord({name: name, address: address,number: number });
+                        }, false
+                );
+
+                document.getElementById('show').addEventListener('click',
+                        function(){
+                            getRecord();
+                        }, false
+                );
+
+            }
+    </script>
+</head>
+<body onload="init()">
+<pre>
+Name : <input id="name" type="text" />
+Add  : <input id="address" type="text" />
+Tel  : <input id="number" type="tel" />
+    <button id="save">Save</button style="display: inline;">
+
+   <button id="show">Show</button>
+    <div id="showObjs"></div>
+</pre>
+</body>
+</html>
